@@ -61,17 +61,17 @@ let navGreen = Array.from(document.querySelectorAll('header nav a')).forEach(
 );
 
 //Add nav items using .appendChild() and .prepend()
-let nav = document.querySelector('header nav')
-let login = document.createElement('a')
-login.href = '#'
-login.textContent = 'Login'
-login.style.color = 'palevioletred'
-let home = document.createElement('a')
-home.src = '#'
-home.textContent = 'Home'
-home.style.color = 'palevioletred'
-nav.prepend(login)
-nav.appendChild(home)
+let nav = document.querySelector('header nav');
+let login = document.createElement('a');
+login.href = '#';
+login.textContent = 'Login';
+login.style.color = 'palevioletred';
+let home = document.createElement('a');
+home.src = '#';
+home.textContent = 'Home';
+home.style.color = 'palevioletred';
+nav.prepend(login);
+nav.appendChild(home);
 
 //Cta Items
 let ctaH1 = (document.querySelector('.cta-text h1').textContent =
@@ -80,6 +80,16 @@ let ctaBtn = (document.querySelector('.cta-text button').textContent =
     siteContent.cta.button);
 let ctaImg = (document.getElementById('cta-img').src =
     siteContent.cta['img-src']);
+
+//Add element with text on button click
+let btn = document.querySelector('button');
+let baseEl = document.querySelector('cta-text');
+
+btn.addEventListener('click', () => {
+    let el = document.querySelector('.cta-text');
+    let h1 = document.createElement('h1');
+    el.appendChild(h1).textContent = "Let's do some JavaScript!";
+});
 
 //Main Content
 let topContentHeaders = document.querySelectorAll(
